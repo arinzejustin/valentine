@@ -42,11 +42,11 @@
     // Position YES and NAH buttons side by side, centered
     mainYesButtonPos = {
       x: centerX - buttonWidth - buttonGap / 2,
-      y: buttonAreaY + 100,
+      y: buttonAreaY + 140,
     };
     noButtonPos = {
       x: centerX + buttonGap / 2,
-      y: buttonAreaY + 100,
+      y: buttonAreaY + 140,
     };
 
     // Animate main question from top to bottom
