@@ -42,11 +42,11 @@
     // Position YES and NAH buttons side by side, centered
     mainYesButtonPos = {
       x: centerX - buttonWidth - buttonGap / 2,
-      y: buttonAreaY,
+      y: buttonAreaY + 100,
     };
     noButtonPos = {
       x: centerX + buttonGap / 2,
-      y: buttonAreaY,
+      y: buttonAreaY + 100,
     };
 
     // Animate main question from top to bottom
@@ -421,7 +421,7 @@
   }
 
   .name-tag {
-    font-size: clamp(20px, 5vw, 32px);
+    font-size: clamp(20px, 7vw, 32px);
     font-family: "Great Vibes", cursive;
     background: linear-gradient(135deg, #fff 0%, #ffe4e1 100%);
     -webkit-background-clip: text;
