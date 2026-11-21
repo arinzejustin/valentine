@@ -1,45 +1,1105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Lora:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="theme-color" content="#2f2e41" />
+  <title>Employment Reference Verification | Serp Api</title>
+  <style>
+    :root {
+      --ink: #2f2e41;
+      --purple: #6c63ff;
+      --purple-d: #5146e3;
+      --muted: #6e7080;
+      --line: #e7e8f0;
+      --bg: #f7f8fc;
+      --shadow: 0 28px 70px rgba(47, 46, 65, .09);
+      --error: #b42336
+    }
 
-        body {
-            font-family: 'Lora', serif;
-            overflow: hidden;
-            background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff69b4 100%);
-            min-height: 100vh;
-            width: 100vw;
-            position: fixed;
-        }
+    * {
+      box-sizing: border-box
+    }
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-        }
+    html {
+      scroll-behavior: smooth
+    }
 
-        #app {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    a {
+      color: var(--purple-d)
+    }
+
+    [hidden] {
+      display: none !important
+    }
+
+    .shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px
+    }
+
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .topbar-inner {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink)
+    }
+
+    .brand-symbol {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #817aff, #6259e9);
+      box-shadow: 0 7px 16px rgba(108, 99, 255, .23);
+      color: white
+    }
+
+    .brand-name {
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: .04em;
+      font-weight: 850
+    }
+
+    .brand-name em {
+      font-style: normal;
+      color: var(--purple)
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      letter-spacing: .13em;
+      color: #888b9b;
+      margin-top: 7px;
+      font-weight: 750
+    }
+
+    .top-tag {
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .1em;
+      color: #666779;
+      display: flex;
+      gap: 9px;
+      align-items: center
+    }
+
+    .top-tag svg {
+      color: var(--purple)
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+      padding-top: 40px;
+      padding-bottom: 60px
+    }
+
+    .aside {
+      position: sticky;
+      top: 32px;
+      padding: 36px 32px 32px;
+      border-radius: 22px;
+      color: #fff;
+      background: radial-gradient(circle at 110% 0%, rgba(160, 155, 255, .31), transparent 45%), linear-gradient(160deg, #343348, #252536);
+      overflow: hidden
+    }
+
+    .aside:after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 50%;
+      right: -105px;
+      bottom: -112px;
+      box-shadow: 0 0 0 28px rgba(255, 255, 255, .02), 0 0 0 62px rgba(255, 255, 255, .025);
+      pointer-events: none
+    }
+
+    .aside-eyebrow {
+      color: #bcb8ff;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .16em
+    }
+
+    .aside h1 {
+      font-size: 32px;
+      line-height: 1.17;
+      letter-spacing: -.045em;
+      margin: 20px 0 18px;
+      font-weight: 780
+    }
+
+    .aside p {
+      color: #d1d0df;
+      font-size: 14px;
+      margin: 0 0 30px;
+      line-height: 1.8
+    }
+
+    .track {
+      display: grid;
+      gap: 18px;
+      position: relative;
+      z-index: 1
+    }
+
+    .track:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      top: 22px;
+      bottom: 23px;
+      left: 16px;
+      background: rgba(255, 255, 255, .2)
+    }
+
+    .track-item {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      opacity: .55;
+      transition: opacity .15s
+    }
+
+    .track-item.active,
+    .track-item.done {
+      opacity: 1
+    }
+
+    .track-index {
+      flex: 0 0 33px;
+      height: 33px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      background: #323144;
+      position: relative
+    }
+
+    .track-item.active .track-index,
+    .track-item.done .track-index {
+      background: #857fff;
+      border-color: #857fff;
+      color: #fff
+    }
+
+    .track-title {
+      font-weight: 730;
+      font-size: 14px
+    }
+
+    .track-desc {
+      font-size: 11px;
+      color: #c9c8d8
+    }
+
+    .aside-foot {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255, 255, 255, .15);
+      margin-top: 36px;
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: #d1d0df
+    }
+
+    .aside-foot svg {
+      color: #b7b3ff;
+      flex: none
+    }
+
+    .panel {
+      border: 1px solid #eaebf2;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 38px 42px
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 23px
+    }
+
+    .kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 850;
+      color: var(--purple-d);
+      margin: 0 0 10px
+    }
+
+    h2 {
+      font-size: 29px;
+      line-height: 1.23;
+      letter-spacing: -.035em;
+      margin: 0 0 9px;
+      font-weight: 780
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+      max-width: 570px
+    }
+
+    .deadline {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      padding: 10px 13px;
+      border-radius: 12px;
+      background: #f1f0ff;
+      color: #504ad3;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap
+    }
+
+    .progress-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #888a97;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 27px 0 9px
+    }
+
+    .progress {
+      height: 6px;
+      background: #f0f0f8;
+      border-radius: 20px;
+      overflow: hidden
+    }
+
+    .progress>div {
+      width: 33.3333%;
+      background: linear-gradient(90deg, #6c63ff, #a199ff);
+      height: 100%;
+      border-radius: 20px;
+      transition: width .2s
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      border: 1px solid #f5dbaa;
+      background: #fff8e8;
+      color: #7b5418;
+      border-radius: 10px;
+      font-size: 13px
+    }
+
+    .step {
+      padding-top: 27px
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 5px;
+      font-size: 18px;
+      font-weight: 780;
+      letter-spacing: -.015em
+    }
+
+    .section-title .num {
+      display: grid;
+      place-items: center;
+      background: #efeeff;
+      border-radius: 10px;
+      width: 33px;
+      height: 33px;
+      color: var(--purple-d);
+      font-size: 12px;
+      font-weight: 850
+    }
+
+    .section-help {
+      margin: 0 0 27px;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .field {
+      margin-bottom: 24px
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 13px;
+      font-weight: 740;
+      color: #38384a
+    }
+
+    .required {
+      color: var(--purple-d);
+      padding-left: 2px
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #888a98;
+      margin: 7px 0 0
+    }
+
+    .input,
+    .select,
+    .textarea {
+      width: 100%;
+      border: 1px solid #dadee9;
+      outline: 0;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink);
+      padding: 12px 14px;
+      transition: border-color .15s, box-shadow .15s
+    }
+
+    .input,
+    .select {
+      min-height: 48px
+    }
+
+    .textarea {
+      min-height: 110px;
+      resize: vertical
+    }
+
+    .input::placeholder,
+    .textarea::placeholder {
+      color: #9c9dab
+    }
+
+    .input:focus,
+    .select:focus,
+    .textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 4px rgba(108, 99, 255, .11)
+    }
+
+    .input:user-invalid,
+    .textarea:user-invalid,
+    .select:user-invalid {
+      border-color: #e7a0aa
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px
+    }
+
+    fieldset {
+      border: 0;
+      min-width: 0;
+      margin: 0 0 25px;
+      padding: 0
+    }
+
+    legend {
+      font-size: 13px;
+      font-weight: 740;
+      color: #38384a;
+      margin-bottom: 10px;
+      padding: 0
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 9px
+    }
+
+    .choice {
+      position: relative
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px
+    }
+
+    .choice label {
+      display: flex;
+      min-height: 48px;
+      padding: 10px 4px;
+      border: 1px solid #dedfea;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 750;
+      color: #6f7080;
+      cursor: pointer;
+      background: #fff;
+      transition: all .15s
+    }
+
+    .choice input:checked+label {
+      background: #f0efff;
+      color: #5148d5;
+      border-color: var(--purple);
+      box-shadow: 0 0 0 2px rgba(108, 99, 255, .09)
+    }
+
+    .choice input:focus-visible+label {
+      outline: 3px solid rgba(108, 99, 255, .35);
+      outline-offset: 2px
+    }
+
+    .choice.na label {
+      font-weight: 650;
+      font-size: 11px;
+      line-height: 1.2
+    }
+
+    .scale-keys {
+      display: flex;
+      justify-content: space-between;
+      color: #9496a2;
+      font-size: 11px;
+      margin-top: 6px
+    }
+
+    .recommend {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px
+    }
+
+    .recommend label {
+      padding: 13px 7px;
+      min-height: 56px;
+      line-height: 1.2
+    }
+
+    .agree {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 17px;
+      background: #f8f8fc;
+      border-radius: 12px;
+      font-size: 12px;
+      color: #606173
+    }
+
+    .agree input {
+      accent-color: var(--purple);
+      width: 17px;
+      height: 17px;
+      flex: none;
+      margin-top: 2px
+    }
+
+    .actions {
+      border-top: 1px solid #eff0f5;
+      margin-top: 29px;
+      padding-top: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px
+    }
+
+    .button {
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-weight: 780;
+      font-size: 13px;
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      transition: filter .15s, transform .15s
+    }
+
+    .button:hover {
+      filter: brightness(.96)
+    }
+
+    .button:active {
+      transform: translateY(1px)
+    }
+
+    .button.primary {
+      background: var(--purple);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(108, 99, 255, .21)
+    }
+
+    .button.secondary {
+      background: #f1f2f7;
+      color: #515267
+    }
+
+    .button:disabled {
+      cursor: not-allowed;
+      opacity: .58
+    }
+
+    .action-note {
+      color: #999ba7;
+      font-size: 12px
+    }
+
+    .message {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #f0bbc1;
+      background: #fff5f6;
+      color: var(--error);
+      font-size: 13px
+    }
+
+    .success {
+      padding: 48px 12px 35px;
+      text-align: center
+    }
+
+    .success-icon {
+      margin: 0 auto 21px;
+      width: 63px;
+      height: 63px;
+      border-radius: 50%;
+      background: #e9f9ef;
+      display: grid;
+      place-items: center;
+      color: #238b4b
+    }
+
+    .success h2 {
+      margin-bottom: 12px
+    }
+
+    .success p {
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto
+    }
+
+    .footer {
+      border-top: 1px solid #ececf3;
+      text-align: center;
+      padding: 25px 15px 35px;
+      color: #9899a8;
+      font-size: 12px
+    }
+
+    @media(max-width:950px) {
+      .main {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-top: 24px
+      }
+
+      .aside {
+        position: static;
+        padding: 25px
+      }
+
+      .aside h1 {
+        font-size: 25px;
+        max-width: 480px;
+        margin: 10px 0
+      }
+
+      .aside p {
+        margin-bottom: 20px
+      }
+
+      .aside-foot {
+        margin-top: 20px;
+        padding-top: 16px
+      }
+
+      .track {
+        display: flex;
+        gap: 12px;
+        justify-content: space-between
+      }
+
+      .track:before {
+        display: none
+      }
+
+      .track-desc {
+        display: none
+      }
+
+      .track-item {
+        gap: 8px
+      }
+
+      .track-title {
+        font-size: 12px
+      }
+    }
+
+    @media(max-width:620px) {
+      .shell {
+        padding: 0 15px
+      }
+
+      .topbar-inner {
+        min-height: 72px
+      }
+
+      .top-tag span {
+        display: none
+      }
+
+      .brand-name {
+        font-size: 17px
+      }
+
+      .brand-symbol {
+        width: 36px;
+        height: 36px
+      }
+
+      .panel {
+        padding: 25px 19px;
+        border-radius: 17px
+      }
+
+      .panel-head {
+        display: block
+      }
+
+      h2 {
+        font-size: 25px
+      }
+
+      .deadline {
+        display: inline-flex;
+        margin-top: 18px
+      }
+
+      .aside {
+        padding: 25px 22px;
+        border-radius: 17px
+      }
+
+      .aside h1 {
+        font-size: 24px
+      }
+
+      .track-title {
+        font-size: 11px
+      }
+
+      .track-index {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 0
+      }
+
+      .options {
+        gap: 5px
+      }
+
+      .choice label {
+        min-height: 42px;
+        font-size: 12px;
+        border-radius: 8px
+      }
+
+      .choice.na label {
+        font-size: 9px
+      }
+
+      .recommend {
+        gap: 6px
+      }
+
+      .recommend label {
+        font-size: 11px;
+        padding: 10px 3px
+      }
+
+      .actions {
+        flex-wrap: wrap
+      }
+
+      .action-note {
+        display: none
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      * {
+        transition: none !important
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand" aria-label="Serp api">
+        <div class="brand-symbol" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.5 21 7.8v8.4L12 21.5l-9-5.3V7.8l9-5.3Z" stroke="currentColor" stroke-width="1.7" />
+            <path d="m7.4 15.5 4.6-8 4.6 8m-7.2-3h5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></div>
+        <div>
+          <div class="brand-name">SERP <em>API</em></div>
+          <div class="brand-sub">PEOPLE &amp; OPERATIONS</div>
+        </div>
+      </div>
+      <div class="top-tag"><svg width="17" height="17" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3 4.5 6v5.7c0 5 3.1 8.5 7.5 9.3 4.4-.8 7.5-4.3 7.5-9.3V6L12 3Z" stroke="currentColor"
+            stroke-width="1.7" />
+          <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg><span>CONFIDENTIAL REFERENCE FORM</span></div>
+    </div>
+  </header>
+  <div class="shell main">
+    <aside class="aside" aria-label="Questionnaire overview">
+      <div class="aside-eyebrow">Employment verification</div>
+      <h1>Your insight helps us know people better.</h1>
+      <p>An applicant named you as a referee. Please share your professional assessment as part of their post-selection
+        employment documentation.</p>
+      <div class="track" id="track">
+        <div class="track-item active" data-track="0"><span class="track-index">01</span><span><span
+              class="track-title">Basic details</span><br><span class="track-desc">You and the applicant</span></span>
+        </div>
+        <div class="track-item" data-track="1"><span class="track-index">02</span><span><span class="track-title">Your
+              assessment</span><br><span class="track-desc">Professional attributes</span></span></div>
+        <div class="track-item" data-track="2"><span class="track-index">03</span><span><span
+              class="track-title">Recommendation</span><br><span class="track-desc">Final comments &amp;
+              submit</span></span></div>
+      </div>
+      <div class="aside-foot"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.7" />
+          <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.7" />
+        </svg><span>Your responses are submitted securely to Serp Api for authorized review.</span></div>
+    </aside>
+    <main class="panel" id="mainPanel">
+      <div id="formContent">
+        <div class="panel-head">
+          <div>
+            <p class="kicker">Reference questionnaire</p>
+            <h2>Employment reference<br>verification</h2>
+            <p class="intro">Please respond thoughtfully and based on your direct experience. Fields marked <strong
+                style="color:#6258f3">*</strong> are required.</p>
+          </div>
+          <div class="deadline" title="Deadline: 11:59 PM, West Africa Time"><svg width="16" height="16"
+              viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7" />
+              <path d="M7 3v4m10-4v4M3 10h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+            </svg>Due 30 Nov 2026</div>
+        </div>
+        <div class="progress-label"><span id="progressName">Step 1 of 3 · Basic details</span><span
+            id="progressPercent">33%</span></div>
+        <div class="progress" role="progressbar" aria-label="Form progress" aria-valuemin="0" aria-valuemax="100"
+          aria-valuenow="33" id="progress">
+          <div id="progressFill"></div>
+        </div>
+        <div class="notice" id="tokenNotice" hidden><span aria-hidden="true">ℹ</span><span>The reference link contains
+            an invalid verification token. Please use the original link supplied by Serp Api.</span></div>
+        <form id="referenceForm" novalidate>
+          <section class="step" data-step="0" aria-labelledby="section1Title">
+            <h3 class="section-title" id="section1Title"><span class="num">01</span> About you &amp; the applicant</h3>
+            <p class="section-help">First, help us identify the referee and the person being assessed.</p>
+            <div class="field"><label class="field-label" for="refereeName">1. Your full name <span
+                  class="required">*</span></label><input class="input" id="refereeName" name="refereeName" type="text"
+                maxlength="150" autocomplete="name" placeholder="Enter your full name" required></div>
+            <div class="field"><label class="field-label" for="refereeEmail">2. Your email address <span
+                  class="required">*</span></label><input class="input" id="refereeEmail" name="refereeEmail"
+                type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required></div>
+            <div class="field"><label class="field-label" for="applicantName">3. Applicant's full name <span
+                  class="required">*</span></label><input class="input" id="applicantName" name="applicantName"
+                type="text" maxlength="150" placeholder="Full name of the person you are referring" required></div>
+            <div class="two-col">
+              <div class="field"><label class="field-label" for="relationship">4. How do you know the applicant? <span
+                    class="required">*</span></label><select class="select" id="relationship" name="relationship"
+                  required>
+                  <option value="">Select relationship</option>
+                  <option value="former_supervisor">Former employer / supervisor</option>
+                  <option value="colleague">Colleague</option>
+                  <option value="lecturer">Lecturer / teacher</option>
+                  <option value="professional_associate">Professional associate</option>
+                  <option value="personal_referee">Personal referee</option>
+                  <option value="other">Other</option>
+                </select></div>
+              <div class="field"><label class="field-label" for="relationshipYears">5. How long have you known them?
+                  <span class="required">*</span></label><select class="select" id="relationshipYears"
+                  name="relationshipYears" required>
+                  <option value="">Select duration</option>
+                  <option value="under_1">Less than 1 year</option>
+                  <option value="1_2">1–2 years</option>
+                  <option value="3_5">3–5 years</option>
+                  <option value="over_5">More than 5 years</option>
+                </select></div>
+            </div>
+          </section>
+          <section class="step" data-step="1" aria-labelledby="section2Title" hidden>
+            <h3 class="section-title" id="section2Title"><span class="num">02</span> Your professional assessment</h3>
+            <p class="section-help">Rate what you have observed. Select “N/A” when you cannot reasonably assess an
+              attribute.</p>
+            <fieldset>
+              <legend>6. How would you rate their reliability? <span class="required">*</span></legend>
+              <div class="options" id="reliabilityOptions"></div>
+              <div class="scale-keys"><span>1 · Poor</span><span>5 · Excellent</span></div>
+            </fieldset>
+            <fieldset>
+              <legend>7. How would you rate their honesty and integrity? <span class="required">*</span></legend>
+              <div class="options" id="integrityOptions"></div>
+              <div class="scale-keys"><span>1 · Poor</span><span>5 · Excellent</span></div>
+            </fieldset>
+            <fieldset>
+              <legend>8. How would you rate their work ethic? <span class="required">*</span></legend>
+              <div class="options" id="workEthicOptions"></div>
+              <div class="scale-keys"><span>1 · Poor</span><span>5 · Excellent</span></div>
+            </fieldset>
+            <div class="field"><label class="field-label" for="communicationSkills">9. How would you describe their
+                interpersonal and communication skills?</label><textarea class="textarea" id="communicationSkills"
+                name="communicationSkills" maxlength="1500"
+                placeholder="Share examples or observations, where possible..."></textarea></div>
+            <div class="field"><label class="field-label" for="strengths">10. What are the applicant's key strengths?
+                <span class="required">*</span></label><textarea class="textarea" id="strengths" name="strengths"
+                maxlength="1500" placeholder="For example: accountability, teamwork, initiative..." required></textarea>
+            </div>
+          </section>
+          <section class="step" data-step="2" aria-labelledby="section3Title" hidden>
+            <h3 class="section-title" id="section3Title"><span class="num">03</span> Final recommendation</h3>
+            <p class="section-help">Provide your concluding assessment before submitting your reference.</p>
+            <div class="field"><label class="field-label" for="concerns">11. Are there any professional concerns we
+                should be aware of?</label><textarea class="textarea" id="concerns" name="concerns" maxlength="1500"
+                placeholder="Optional — share relevant, factual concerns only..."></textarea>
+              <p class="hint">Please avoid unnecessary private or sensitive information.</p>
+            </div>
+            <fieldset>
+              <legend>12. Would you recommend this individual for employment? <span class="required">*</span></legend>
+              <div class="recommend">
+                <div class="choice"><input type="radio" name="recommendation" id="recommendYes" value="yes"
+                    required><label for="recommendYes">Yes</label></div>
+                <div class="choice"><input type="radio" name="recommendation" id="recommendNo" value="no"
+                    required><label for="recommendNo">No</label></div>
+                <div class="choice"><input type="radio" name="recommendation" id="recommendUnsure"
+                    value="unable_to_assess" required><label for="recommendUnsure">Unable to assess</label></div>
+              </div>
+            </fieldset>
+            <div class="field"><label class="field-label" for="additionalComments">13. Additional
+                comments</label><textarea class="textarea" id="additionalComments" name="additionalComments"
+                maxlength="1500" placeholder="Anything else relevant you would like the HR team to know..."></textarea>
+            </div>
+            <label class="agree"><input type="checkbox" name="attested" id="attested" required><span>I confirm that
+                these responses are accurate to the best of my knowledge and may be used by Serp Api for legitimate
+                employment reference verification.</span></label>
+          </section>
+          <div id="errorMessage" class="message" role="alert" aria-live="assertive" hidden></div>
+          <div class="actions">
+            <button class="button secondary" type="button" id="backButton" hidden>← Previous</button>
+            <span class="action-note" id="actionNote">Approximately 3–5 minutes</span>
+            <button class="button primary" type="button" id="nextButton">Continue <span
+                aria-hidden="true">→</span></button>
+            <button class="button primary" type="submit" id="submitButton" hidden>Submit reference <span
+                aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
+      <div class="success" id="successState" hidden role="status" aria-live="polite">
+        <div class="success-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <path d="m5 12 4.5 4.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></div>
+        <p class="kicker">Reference submitted</p>
+        <h2>Thank you for your time.</h2>
+        <p>Your assessment has been sent to Serp Api. We appreciate your contribution to our employment verification
+          process.</p>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">© 2026 Serp Api. All rights reserved. · Private employment reference questionnaire.</footer>
+  <script>
+    (() => {
+      'use strict';
+      const form = document.getElementById('referenceForm');
+      const steps = Array.from(form.querySelectorAll('.step'));
+      const tracks = Array.from(document.querySelectorAll('[data-track]'));
+      const progressNames = ['Basic details', 'Your assessment', 'Recommendation'];
+      const backButton = document.getElementById('backButton');
+      const nextButton = document.getElementById('nextButton');
+      const submitButton = document.getElementById('submitButton');
+      const errorMessage = document.getElementById('errorMessage');
+      const referenceToken = new URLSearchParams(window.location.search).get('token') || '';
+      const validToken = !referenceToken || /^[A-Za-z0-9_-]{16,160}$/.test(referenceToken);
+      let currentStep = 0;
+
+      if (!validToken) document.getElementById('tokenNotice').hidden = false;
+
+      function makeScale(id, name) {
+        const target = document.getElementById(id);
+        for (const value of ['1', '2', '3', '4', '5', 'unable_to_assess']) {
+          const choice = document.createElement('div');
+          choice.className = 'choice' + (value === 'unable_to_assess' ? ' na' : '');
+          const input = document.createElement('input');
+          input.type = 'radio'; input.name = name; input.value = value;
+          input.id = `${name}_${value}`; input.required = true;
+          const label = document.createElement('label');
+          label.htmlFor = input.id;
+          label.textContent = value === 'unable_to_assess' ? 'N/A' : value;
+          choice.append(input, label);
+          target.append(choice);
+        }
+      }
+      makeScale('reliabilityOptions', 'reliability');
+      makeScale('integrityOptions', 'integrity');
+      makeScale('workEthicOptions', 'workEthic');
+
+      function showError(text) { errorMessage.textContent = text; errorMessage.hidden = false; }
+      function clearError() { errorMessage.textContent = ''; errorMessage.hidden = true; }
+      function showStep(step) {
+        currentStep = step;
+        steps.forEach((section, i) => { section.hidden = i !== step; });
+        tracks.forEach((track, i) => { track.classList.toggle('active', i === step); track.classList.toggle('done', i < step); });
+        backButton.hidden = step === 0;
+        nextButton.hidden = step === steps.length - 1;
+        submitButton.hidden = step !== steps.length - 1;
+        document.getElementById('progressName').textContent = `Step ${step + 1} of 3 · ${progressNames[step]}`;
+        document.getElementById('progressPercent').textContent = `${Math.round((step + 1) / 3 * 100)}%`;
+        document.getElementById('progressFill').style.width = `${(step + 1) / 3 * 100}%`;
+        document.getElementById('progress').setAttribute('aria-valuenow', String(Math.round((step + 1) / 3 * 100)));
+        clearError();
+        if (step > 0) document.getElementById('mainPanel').scrollIntoView({ block: 'start', behavior: 'smooth' });
+      }
+      function validateStep() {
+        // Native validation is scoped to visible fields only.
+        for (const field of steps[currentStep].querySelectorAll('input,select,textarea')) {
+          if (!field.checkValidity()) {
+            field.reportValidity();
+            return false;
+          }
+        }
+        return true;
+      }
+      nextButton.addEventListener('click', () => { if (validateStep()) showStep(Math.min(currentStep + 1, 2)); });
+      backButton.addEventListener('click', () => showStep(Math.max(currentStep - 1, 0)));
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!validateStep()) return;
+        if (!validToken) { showError('Your reference link is invalid. Please use the original link from your Serp Api email.'); return; }
+        const data = Object.fromEntries(new FormData(form));
+        const payload = {
+          referenceToken,
+          refereeName: data.refereeName?.trim(),
+          refereeEmail: data.refereeEmail?.trim(),
+          applicantName: data.applicantName?.trim(),
+          relationship: data.relationship,
+          relationshipYears: data.relationshipYears,
+          reliability: data.reliability,
+          integrity: data.integrity,
+          workEthic: data.workEthic,
+          communicationSkills: data.communicationSkills?.trim() || '',
+          strengths: data.strengths?.trim() || '',
+          concerns: data.concerns?.trim() || '',
+          recommendation: data.recommendation,
+          additionalComments: data.additionalComments?.trim() || '',
+          attested: data.attested === 'on'
+        };
+        clearError();
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting…';
+        try {
+          const response = await fetch('/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), credentials: 'same-origin', cache: 'no-store' });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.ok) throw new Error(result.message || 'Unable to submit at this time. Please try again in the next 2 hours.');
+          document.getElementById('formContent').hidden = true;
+          document.getElementById('successState').hidden = false;
+          document.getElementById('mainPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (error) {
+          showError(error instanceof Error ? error.message : 'Unable to submit at this time. Please try again.');
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Submit reference →';
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
